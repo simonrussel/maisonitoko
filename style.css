@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6e4ca;
+  color: #703424;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 60px;
+}
+
+.logo img {
+  width: 100px;        /* adjust size */
+  height: 100px;       /* MUST be same as width */
+  border-radius: 50%; /* makes it a circle */
+  object-fit: cover; /* prevents stretching */
+}
+
+
+.nav a {
+  margin-left: 40px;
+  text-decoration: none;
+  color: #703424;
+  font-weight: 500;
+  position: relative;
+}
+
+.nav a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background-color: #703424;
+}
+
+.top-line {
+  height: 6px;
+  width: 55%;              /* controls how long the line is */
+  background-color: #703424;
+  margin: 20px 0 0 60px;   /* pushes it from the left */
+  margin-top: .5%;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+}
+
+.hero-text {
+  max-width: 50%;
+  margin-top: -2%;
+  text-align: center; /* centers everything cleanly */
+}
+
+.hero-text h1 {
+  font-size: 72px;
+  letter-spacing: 12px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.hero-text h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 14px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.hero-image img {
+  width: 600px;
+  height: auto;
+  opacity: 0.9;
+}
+
+.hero-image {
+  margin-top: -40px;
+}
+
+
+.page-content {
+  padding: 80px 60px;
+}
+
+.page-content h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.page-content p {
+  font-size: 16px;
+  max-width: 600px;
+}
+
+.contact a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact a:hover {
+  text-decoration: underline;
+}
+
+/* PRODUCTS SECTION */
+.products {
+  padding: 80px 60px;
+}
+
+/* Horizontal scroll container */
+.product-row {
+  display: flex;
+  gap: 40px;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding-bottom: 20px;
+}
+
+.product-row::-webkit-scrollbar {
+  height: 8px;
+}
+
+.product-row::-webkit-scrollbar-thumb {
+  background: #703424;
+  border-radius: 10px;
+}
+
+.name-input {
+  padding: 12px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 40px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Prevent shrinking */
+.card {
+  flex: 0 0 320px;
+}
+
+/* CARD DESIGN LIKE IMAGE */
+.card {
+  background: #e8cdb2;
+  width: 320px;
+  border-radius: 30px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s ease;
+  flex: 0 0 320px;   /* fixed width for horizontal layout */
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  margin: 10px 0;
+  font-size: 18px;
+}
+
+.card .desc {
+  font-size: 14px;
+  opacity: 0.8;
+  min-height: 60px;
+  margin-bottom: 15px;
+}
+
+/* BOTTOM ROW */
+.bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* PRICE */
+.price {
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* QTY BOX */
+.qty {
+  display: flex;
+  align-items: center;
+  background: #d9c2ad;
+  border-radius: 10px;
+  padding: 4px 8px;
+}
+
+.qty input {
+  width: 35px;
+  text-align: center;
+  border: none;
+  background: transparent;
+}
+
+.qty button {
+  border: none;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0 6px;
+}
+
+/* ADD BUTTON */
+.add-btn {
+  background: #703424;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.add-btn:hover {
+  background: #8a4a34;
+}
+
+
+/* USER ORDER FORM */
+.products form {
+  width: 100%;
+  text-align: center;
+}
+
+.products input[type="text"] {
+  padding: 12px;
+  width: 300px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.products input[type="number"] {
+  width: 60px;
+  padding: 5px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Submit Button */
+.products button[type="submit"] {
+  background: #703424;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.products button[type="submit"]:hover {
+  background: #8a4a34;
+}
+
+
+
+/* ADMIN LOGIN FORM */
+form {
+  max-width: 400px;
+  margin: 100px auto;
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+form h2 {
+  margin-bottom: 25px;
+  color: #703424;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  background: #703424;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background: #8a4a34;
+}
+
+
+
+/* ADMIN SIDE*/
+table {
+  width: 90%;
+  margin: 50px auto;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+table th {
+  background: #703424;
+  color: white;
+  padding: 15px;
+}
+
+table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+
+table tr:hover {
+  background-color: #f9f3ed;
+}
+
+/* ADMIN HEADER */
+h2 {
+  text-align: center;
+  margin-top: 40px;
+  color: #703424;
+}
+
+a {
+  color: #703424;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
